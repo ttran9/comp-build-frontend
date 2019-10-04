@@ -7,7 +7,7 @@
     "heroku-prebuild": "npm install --dev",
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "heroku-postbuild": "webpack --config webpack.config.js"
+    "heroku-postbuild": "npm install && webpack --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
