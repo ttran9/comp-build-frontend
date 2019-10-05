@@ -48,8 +48,6 @@ export const getComputerBuildByBuildIdentifier = buildIdentifier => async dispat
 };
 
 export const getComputerBuilds = () => async dispatch => {
-  console.log("getting computer builds!");
-  console.log(process.env);
   try {
     const response = await axios.get(Constants.COMPUTER_BUILD_API);
     dispatch({
