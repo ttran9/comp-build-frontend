@@ -1,6 +1,6 @@
 export const HOME_URL = "/";
 export const BACKEND_BASE_URL =
-  process.env.REACT_APP_BACKEND_URL || "http://localhost:8080";
+  process.env["BACKEND_URL"] || "http://localhost:8080";
 
 // user constants
 export const REGISTER_URL = "/register";
