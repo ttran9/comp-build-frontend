@@ -1,6 +1,5 @@
 export const HOME_URL = "/";
-export const BACKEND_BASE_URL =
-  process.env["BACKEND_URL"] || "http://localhost:8080";
+export const BACKEND_BASE_URL = "https://todd-comp-build-backend.herokuapp.com";
 
 // user constants
 export const REGISTER_URL = "/register";
