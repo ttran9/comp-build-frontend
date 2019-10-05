@@ -1,6 +1,5 @@
 export const HOME_URL = "/";
-export const BACKEND_BASE_URL =
-  "https://todd-comp-build-backend.herokuapp.com/"; // not sure of a better name for this.
+export const BACKEND_BASE_URL = "https://todd-comp-build-backend.herokuapp.com"; // not sure of a better name for this.
 
 // user constants
 export const REGISTER_URL = "/register";
