@@ -98,11 +98,11 @@ class EditComputerPart extends Component {
     });
   };
 
-  formatDate = () => {
+  formatDate() {
     this.setState({
       purchaseDate: moment(this.state.purchaseDate).format("YYYY-MM-DD")
     });
-  };
+  }
 
   render() {
     const { errors } = this.state;
