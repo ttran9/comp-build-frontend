@@ -81,6 +81,7 @@ export const getObjectById = (
     const response = await axios.get(
       `${apiURL}${buildIdentifier}/${uniqueIdentifier}`
     );
+    console.log(response.data);
     dispatch({
       type: dispatchType,
       payload: response.data
