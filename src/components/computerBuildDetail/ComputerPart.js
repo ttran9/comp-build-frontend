@@ -21,18 +21,17 @@ class ComputerPart extends Component {
     const { computerPart, buildIdentifier, isOwner } = this.props;
     const { uniqueIdentifier } = computerPart;
     let editAndDeleteRows = <Fragment />;
-    let formattedDate = moment(computerPart.purchaseDate).format(
-      "MMMM Do, YYYY"
-    );
+    // let formattedDate = moment(computerPart.purchaseDate).format(
+    //   "MMMM Do, YYYY"
+    // );
+    let formattedDate = moment(computerPart.purchaseDate).format("yyyy-MM-dd");
 
     if (isOwner) {
       editAndDeleteRows = (
         <Fragment>
           <td>
             <Link
-              to={`${
-                Constants.UPDATE_COMPUTER_PART_URL
-              }${buildIdentifier}/${uniqueIdentifier}`}
+              to={`${Constants.UPDATE_COMPUTER_PART_URL}${buildIdentifier}/${uniqueIdentifier}`}
             >
               <i className="far fa-edit pr-1" />
             </Link>
