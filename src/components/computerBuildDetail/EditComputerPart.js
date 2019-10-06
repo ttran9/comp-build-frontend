@@ -99,7 +99,8 @@ class EditComputerPart extends Component {
 
   render() {
     const { errors, purchaseDate } = this.state;
-    let formattedDate = moment(purchaseDate).format("MMMM Do, YYYY");
+    // let formattedDate = moment(purchaseDate).format("MMMM Do, YYYY");
+    let formattedDate = moment(purchaseDate).format("yyyy-MM-dd");
 
     return (
       <div className="computer-part">
