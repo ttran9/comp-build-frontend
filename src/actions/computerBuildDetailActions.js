@@ -2,6 +2,7 @@ import axios from "axios";
 import * as Constants from "../Constants";
 import { GET_ERRORS, GET_COMPUTER_BUILD_DETAILS } from "./types";
 import { clearErrors } from "../errorUtils/clearErrors";
+import moment from "moment";
 
 // computer build detail actions start
 /*
@@ -81,9 +82,17 @@ export const getObjectById = (
     const response = await axios.get(
       `${apiURL}${buildIdentifier}/${uniqueIdentifier}`
     );
+    console.log(response);
+    let returnedObject = response.data;
+    let purchaseDate = response.data.purchaseDate;
+    if (purchaseDate !== undefined && purchaseDate !== null) {
+      returnedObject.data.purchaseDate = moment(this.state.purchaseDate).format(
+        "YYYY-MM-DD"
+      );
+    }
     dispatch({
       type: dispatchType,
-      payload: response.data
+      payload: returnedObject
     });
   } catch (error) {
     dispatch({
