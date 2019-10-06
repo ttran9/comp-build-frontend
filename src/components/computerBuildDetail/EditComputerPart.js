@@ -97,10 +97,14 @@ class EditComputerPart extends Component {
     });
   };
 
+  formatDate = () => {
+    this.setState({
+      purchaseDate: moment(this.state.purchaseDate).format("yyyy-MM-dd")
+    });
+  };
+
   render() {
-    const { errors, purchaseDate } = this.state;
-    // let formattedDate = moment(purchaseDate).format("MMMM Do, YYYY");
-    let formattedDate = moment(purchaseDate).format("yyyy-MM-dd");
+    const { errors } = this.state;
 
     return (
       <div className="computer-part">
@@ -136,7 +140,7 @@ class EditComputerPart extends Component {
                     })}
                     name="purchaseDate"
                     id="purchaseDate"
-                    value={formattedDate}
+                    value={this.state.purchaseDate}
                     onChange={this.onChange}
                   />
                   {errors.purchaseDate && (
