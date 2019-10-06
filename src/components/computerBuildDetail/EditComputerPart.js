@@ -64,11 +64,11 @@ class EditComputerPart extends Component {
       uniqueIdentifier,
       GET_COMPUTERPART
     );
-    console.log(this.state.purchaseDate);
-    console.log(moment(this.state.purchaseDate).format("YYYY-MM-DD"));
-    this.setState({
-      purchaseDate: moment(this.state.purchaseDate).format("YYYY-MM-DD")
-    });
+    console.log(this.state);
+    // console.log(moment(this.state.purchaseDate).format("YYYY-MM-DD"));
+    // this.setState({
+    // purchaseDate: moment(this.state.purchaseDate).format("YYYY-MM-DD")
+    // });
   }
 
   onSubmit = event => {
