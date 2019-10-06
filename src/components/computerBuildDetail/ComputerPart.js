@@ -21,10 +21,9 @@ class ComputerPart extends Component {
     const { computerPart, buildIdentifier, isOwner } = this.props;
     const { uniqueIdentifier } = computerPart;
     let editAndDeleteRows = <Fragment />;
-    // let formattedDate = moment(computerPart.purchaseDate).format(
-    //   "MMMM Do, YYYY"
-    // );
-    let formattedDate = moment(computerPart.purchaseDate).format("yyyy-MM-dd");
+    let formattedDate = moment(computerPart.purchaseDate).format(
+      "MMMM Do, YYYY"
+    );
 
     if (isOwner) {
       editAndDeleteRows = (
