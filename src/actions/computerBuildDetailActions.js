@@ -82,14 +82,14 @@ export const getObjectById = (
     const response = await axios.get(
       `${apiURL}${buildIdentifier}/${uniqueIdentifier}`
     );
-    console.log(response);
     let returnedObject = response.data;
     let purchaseDate = response.data.purchaseDate;
     if (purchaseDate !== undefined && purchaseDate !== null) {
-      returnedObject.data.purchaseDate = moment(this.state.purchaseDate).format(
+      returnedObject.purchaseDate = moment(this.state.purchaseDate).format(
         "YYYY-MM-DD"
       );
     }
+    console.log(returnedObject);
     dispatch({
       type: dispatchType,
       payload: returnedObject
