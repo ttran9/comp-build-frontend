@@ -8,6 +8,7 @@ import {
 } from "../../actions/computerBuildDetailActions";
 import * as Constants from "../../Constants";
 import { GET_COMPUTERPART } from "../../actions/types";
+import moment from "moment";
 
 class EditComputerPart extends Component {
   constructor() {
@@ -97,7 +98,9 @@ class EditComputerPart extends Component {
   };
 
   render() {
-    const { errors } = this.state;
+    const { errors, purchaseDate } = this.state;
+    let formattedDate = moment(purchaseDate).format("MMMM Do, YYYY");
+
     return (
       <div className="computer-part">
         <div className="container">
@@ -132,7 +135,7 @@ class EditComputerPart extends Component {
                     })}
                     name="purchaseDate"
                     id="purchaseDate"
-                    value={this.state.purchaseDate}
+                    value={formattedDate}
                     onChange={this.onChange}
                   />
                   {errors.purchaseDate && (
