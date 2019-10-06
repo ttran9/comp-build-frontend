@@ -83,13 +83,12 @@ export const getObjectById = (
       `${apiURL}${buildIdentifier}/${uniqueIdentifier}`
     );
     let returnedObject = response.data;
-    let purchaseDate = response.data.purchaseDate;
+    let { purchaseDate } = returnedObject;
     if (purchaseDate !== undefined && purchaseDate !== null) {
-      returnedObject.purchaseDate = moment(this.state.purchaseDate).format(
+      returnedObject.purchaseDate = moment(returnedObject.purchaseDate).format(
         "YYYY-MM-DD"
       );
     }
-    console.log(returnedObject);
     dispatch({
       type: dispatchType,
       payload: returnedObject
