@@ -64,7 +64,9 @@ class EditComputerPart extends Component {
       uniqueIdentifier,
       GET_COMPUTERPART
     );
-    formatDate();
+    this.setState({
+      purchaseDate: moment(this.state.purchaseDate).format("YYYY-MM-DD")
+    });
   }
 
   onSubmit = event => {
@@ -97,12 +99,6 @@ class EditComputerPart extends Component {
       [event.target.name]: event.target.value
     });
   };
-
-  formatDate() {
-    this.setState({
-      purchaseDate: moment(this.state.purchaseDate).format("YYYY-MM-DD")
-    });
-  }
 
   render() {
     const { errors } = this.state;
