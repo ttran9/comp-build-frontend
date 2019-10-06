@@ -1,4 +1,6 @@
-export const formatDate = response => {
+import moment from "moment";
+
+export function formatDate(response) {
   let updatedObject = response.data;
   let { purchaseDate } = updatedObject;
   if (purchaseDate !== undefined && purchaseDate !== null) {
@@ -7,4 +9,4 @@ export const formatDate = response => {
     );
   }
   return updatedObject;
-};
+}
