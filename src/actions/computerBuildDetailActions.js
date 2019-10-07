@@ -2,7 +2,6 @@ import axios from "axios";
 import * as Constants from "../Constants";
 import { GET_ERRORS, GET_COMPUTER_BUILD_DETAILS } from "./types";
 import { clearErrors } from "../errorUtils/clearErrors";
-import { formatDate } from "./actionUtility";
 
 // computer build detail actions start
 /*
@@ -84,7 +83,7 @@ export const getObjectById = (
     );
     dispatch({
       type: dispatchType,
-      payload: formatDate(response)
+      payload: response.data
     });
   } catch (error) {
     dispatch({
