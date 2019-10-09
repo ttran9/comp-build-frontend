@@ -3,6 +3,7 @@ import checkOwner from "../../securityUtils/checkOwner";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { deleteComputerBuildByBuildIdentifier } from "../../actions/computerBuildDetailActions";
+import { getSecurityReducer } from "../../selectors";
 
 class ComputerBuildHeader extends Component {
   onDelete = buildIdentifier => {
@@ -56,7 +57,7 @@ ComputerBuildHeader.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  security: state.security
+  security: getSecurityReducer(state)
 });
 
 export default connect(

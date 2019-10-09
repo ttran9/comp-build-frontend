@@ -8,6 +8,7 @@ import {
 } from "../../actions/computerBuildDetailActions";
 import * as Constants from "../../Constants";
 import { GET_DIRECTION } from "../../actions/types";
+import { getDirectionReducer, getErrorsReducer } from "../../selectors";
 
 class EditDirection extends Component {
   constructor() {
@@ -129,8 +130,8 @@ EditDirection.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  errors: state.errors,
-  direction: state.computerBuildDetails.direction
+  errors: getErrorsReducer(state),
+  direction: getDirectionReducer(state)
 });
 
 export default connect(

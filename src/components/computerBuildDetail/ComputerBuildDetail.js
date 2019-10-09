@@ -8,6 +8,10 @@ import DirectionsList from "./DirectionsList";
 import PurposeList from "./PurposeList";
 import BuildNoteList from "./BuildNoteList";
 import OverclockingNoteList from "./OverclockingNoteList";
+import {
+  getComputerBuildDetailsReducer,
+  getSecurityReducer
+} from "../../selectors";
 
 class ComputerBuildDetail extends Component {
   componentDidMount() {
@@ -84,8 +88,8 @@ ComputerBuildDetail.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  computerBuildDetails: state.computerBuildDetails,
-  security: state.security
+  computerBuildDetails: getComputerBuildDetailsReducer(state),
+  security: getSecurityReducer(state)
 });
 
 export default connect(

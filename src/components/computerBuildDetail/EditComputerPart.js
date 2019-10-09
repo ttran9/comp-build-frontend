@@ -8,6 +8,7 @@ import {
 } from "../../actions/computerBuildDetailActions";
 import * as Constants from "../../Constants";
 import { GET_COMPUTERPART } from "../../actions/types";
+import { getComputerPartReducer, getErrorsReducer } from "../../selectors";
 
 class EditComputerPart extends Component {
   constructor() {
@@ -215,8 +216,8 @@ EditComputerPart.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  errors: state.errors,
-  computerPart: state.computerBuildDetails.computerPart
+  errors: getErrorsReducer(state),
+  computerPart: getComputerPartReducer(state)
 });
 
 export default connect(

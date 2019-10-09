@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as Constants from "../../Constants";
 import { Link } from "react-router-dom";
+import { getSecurityReducer } from "../../selectors";
 
 class RequestSuccess extends Component {
   render() {
@@ -54,7 +55,7 @@ RequestSuccess.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  security: state.security
+  security: getSecurityReducer(state)
 });
 
 export default connect(mapStateToProps)(RequestSuccess);

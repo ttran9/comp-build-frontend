@@ -3,6 +3,7 @@ import { changePassword } from "../../actions/securityActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
+import { getErrorsReducer, getSecurityReducer } from "../../selectors";
 
 class ProcessPasswordChange extends Component {
   constructor(props) {
@@ -102,8 +103,8 @@ ProcessPasswordChange.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  security: state.security,
-  errors: state.errors
+  security: getSecurityReducer(state),
+  errors: getErrorsReducer(state)
 });
 
 export default connect(

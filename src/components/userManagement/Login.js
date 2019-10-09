@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import classnames from "classnames";
 import { login } from "../../actions/securityActions";
 import * as Constants from "../../Constants";
+import { getErrorsReducer, getSecurityReducer } from "../../selectors";
 
 class Login extends Component {
   constructor() {
@@ -109,8 +110,8 @@ Login.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  errors: state.errors,
-  security: state.security
+  errors: getErrorsReducer(state),
+  security: getSecurityReducer(state)
 });
 
 export default connect(

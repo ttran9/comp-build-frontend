@@ -4,6 +4,7 @@ import * as Constants from "../../Constants";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logout } from "../../actions/securityActions";
+import { getSecurityReducer } from "../../selectors";
 
 class Header extends Component {
   logout() {
@@ -87,7 +88,7 @@ Header.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  security: state.security
+  security: getSecurityReducer(state)
 });
 
 export default connect(

@@ -4,6 +4,7 @@ import Direction from "./Direction";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as Constants from "../../Constants";
+import { getSecurityReducer } from "../../selectors";
 
 class DirectionsList extends Component {
   constructor() {
@@ -35,9 +36,7 @@ class DirectionsList extends Component {
             <div className="col-sm-4">
               <Link
                 className="btn btn-primary"
-                to={`${Constants.COMPUTER_BUILD_URL}${buildIdentifier}${
-                  Constants.CREATE_DIRECTION_URL
-                }`}
+                to={`${Constants.COMPUTER_BUILD_URL}${buildIdentifier}${Constants.CREATE_DIRECTION_URL}`}
               >
                 Create Direction!
               </Link>
@@ -102,26 +101,12 @@ class DirectionsList extends Component {
   }
 }
 
-// DirectionsList.propTypes = {
-//   getComputerBuildByBuildIdentifier: PropTypes.func.isRequired,
-//   computerBuild: PropTypes.object.isRequired
-// };
-
-// const mapStateToProps = state => ({
-//   computerBuild: state.computerBuild
-// });
-
-// export default connect(
-//   mapStateToProps,
-//   { getComputerBuildByBuildIdentifier }
-// )(DirectionsList);
-
 DirectionsList.propTypes = {
   security: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  security: state.security
+  security: getSecurityReducer(state)
 });
 
 export default connect(

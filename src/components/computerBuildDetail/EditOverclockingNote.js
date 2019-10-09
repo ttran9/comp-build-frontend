@@ -8,6 +8,7 @@ import {
 } from "../../actions/computerBuildDetailActions";
 import * as Constants from "../../Constants";
 import { GET_OVERCLOCKING_NOTE } from "../../actions/types";
+import { getErrorsReducer, getOverclockingNoteReducer } from "../../selectors";
 
 class EditOverclockingNote extends Component {
   constructor() {
@@ -146,8 +147,8 @@ EditOverclockingNote.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  errors: state.errors,
-  overclockingNote: state.computerBuildDetails.overclockingNote
+  errors: getErrorsReducer(state),
+  overclockingNote: getOverclockingNoteReducer(state)
 });
 
 export default connect(

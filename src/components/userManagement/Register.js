@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
 import * as Constants from "../../Constants";
+import { getErrorsReducer, getSecurityReducer } from "../../selectors";
 
 class Register extends Component {
   constructor() {
@@ -162,8 +163,8 @@ Register.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  errors: state.errors,
-  security: state.security
+  errors: getErrorsReducer(state),
+  security: getSecurityReducer(state)
 });
 
 export default connect(

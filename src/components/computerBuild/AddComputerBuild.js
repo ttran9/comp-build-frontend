@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createComputerBuild } from "../../actions/computerBuildActions";
 import classnames from "classnames";
+import { getErrorsReducer } from "../../selectors";
 
 class AddComputerBuild extends Component {
   constructor() {
@@ -107,7 +108,7 @@ AddComputerBuild.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  errors: state.errors
+  errors: getErrorsReducer(state)
 });
 
 export default connect(

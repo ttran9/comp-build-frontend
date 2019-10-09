@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import * as Constants from "../../Constants";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { getSecurityReducer } from "../../selectors";
 
 class ComputerPartList extends Component {
   constructor() {
@@ -36,9 +37,7 @@ class ComputerPartList extends Component {
             <div className="col-sm-4">
               <Link
                 className="btn btn-primary"
-                to={`${Constants.COMPUTER_BUILD_URL}${buildIdentifier}${
-                  Constants.CREATE_COMPUTER_PART_URL
-                }`}
+                to={`${Constants.COMPUTER_BUILD_URL}${buildIdentifier}${Constants.CREATE_COMPUTER_PART_URL}`}
               >
                 Create Computer Part!
               </Link>
@@ -111,7 +110,7 @@ ComputerPartList.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  security: state.security
+  security: getSecurityReducer(state)
 });
 
 export default connect(

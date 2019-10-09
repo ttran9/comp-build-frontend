@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import * as Constants from "../../Constants";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { getSecurityReducer } from "../../selectors";
 
 class BuildNoteList extends Component {
   constructor() {
@@ -34,9 +35,7 @@ class BuildNoteList extends Component {
             <div className="col-sm-4">
               <Link
                 className="btn btn-primary"
-                to={`${Constants.COMPUTER_BUILD_URL}${buildIdentifier}${
-                  Constants.CREATE_BUILD_NOTE_URL
-                }`}
+                to={`${Constants.COMPUTER_BUILD_URL}${buildIdentifier}${Constants.CREATE_BUILD_NOTE_URL}`}
               >
                 Create Build Note!
               </Link>
@@ -104,7 +103,7 @@ BuildNoteList.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  security: state.security
+  security: getSecurityReducer(state)
 });
 
 export default connect(

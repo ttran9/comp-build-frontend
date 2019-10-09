@@ -8,6 +8,7 @@ import {
 } from "../../actions/computerBuildDetailActions";
 import * as Constants from "../../Constants";
 import { GET_PURPOSE } from "../../actions/types";
+import { getErrorsReducer, getPurposeReducer } from "../../selectors";
 
 class EditPurpose extends Component {
   constructor() {
@@ -146,8 +147,8 @@ EditPurpose.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  errors: state.errors,
-  purpose: state.computerBuildDetails.purpose
+  errors: getErrorsReducer(state),
+  purpose: getPurposeReducer(state)
 });
 
 export default connect(

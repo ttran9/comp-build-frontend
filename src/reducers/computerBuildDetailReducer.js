@@ -11,6 +11,13 @@ import {
   DELETE_OVERCLOCKING_NOTE,
   GET_OVERCLOCKING_NOTE
 } from "../actions/types";
+import {
+  getBuildNotesList,
+  getComputerPartsList,
+  getDirectionsList,
+  getOverclockingNotesList,
+  getPurposeList, getTotalPrice
+} from "../selectors";
 
 const initialState = {
   computerParts: [],
@@ -44,11 +51,11 @@ export default function(state = initialState, action) {
     case DELETE_COMPUTERPART:
       return {
         ...state,
-        computerParts: state.computerParts.filter(
+        computerParts: getComputerPartsList(state).filter(
           computerPart =>
             computerPart.uniqueIdentifier !== action.payload.uniqueIdentifier
         ),
-        totalPrice: state.totalPrice - action.payload.deletedItemPrice
+        totalPrice: getTotalPrice(state) - action.payload.deletedItemPrice
       };
     case GET_COMPUTERPART:
       return {
@@ -58,7 +65,7 @@ export default function(state = initialState, action) {
     case DELETE_PURPOSE:
       return {
         ...state,
-        purposeList: state.purposeList.filter(
+        purposeList: getPurposeList(state).filter(
           purpose =>
             purpose.uniqueIdentifier !== action.payload.uniqueIdentifier
         )
@@ -71,7 +78,7 @@ export default function(state = initialState, action) {
     case DELETE_BUILD_NOTE:
       return {
         ...state,
-        buildNotes: state.buildNotes.filter(
+        buildNotes: getBuildNotesList(state).filter(
           buildNote =>
             buildNote.uniqueIdentifier !== action.payload.uniqueIdentifier
         )
@@ -84,7 +91,7 @@ export default function(state = initialState, action) {
     case DELETE_DIRECTION:
       return {
         ...state,
-        directions: state.directions.filter(
+        directions: getDirectionsList(state).filter(
           direction =>
             direction.uniqueIdentifier !== action.payload.uniqueIdentifier
         )
@@ -97,7 +104,7 @@ export default function(state = initialState, action) {
     case DELETE_OVERCLOCKING_NOTE:
       return {
         ...state,
-        overclockingNotes: state.overclockingNotes.filter(
+        overclockingNotes: getOverclockingNotesList(state).filter(
           overclockingNote =>
             overclockingNote.uniqueIdentifier !==
             action.payload.uniqueIdentifier

@@ -4,6 +4,7 @@ import classnames from "classnames";
 import PropTypes from "prop-types";
 import { createObject } from "../../actions/computerBuildDetailActions";
 import * as Constants from "../../Constants";
+import { getErrorsReducer, getSecurityReducer } from "../../selectors";
 
 class AddComputerPart extends Component {
   constructor() {
@@ -172,8 +173,8 @@ AddComputerPart.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  errors: state.errors,
-  security: state.security
+  errors: getErrorsReducer(state),
+  security: getSecurityReducer(state)
 });
 
 export default connect(

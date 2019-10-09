@@ -3,6 +3,7 @@ import {
   GET_COMPUTERBUILD,
   DELETE_COMPUTERBUILD
 } from "../actions/types";
+import { getComputerBuildsList } from "../selectors";
 
 const initialState = {
   computerBuilds: [],
@@ -24,7 +25,7 @@ export default function(state = initialState, action) {
     case DELETE_COMPUTERBUILD:
       return {
         ...state,
-        computerBuilds: state.computerBuilds.filter(
+        computerBuilds: getComputerBuildsList(state).filter(
           computerBuild => computerBuild.buildIdentifier !== action.payload
         )
       };

@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { deleteComputerBuildByIdentifier } from "../../actions/computerBuildActions";
 import * as Constants from "../../Constants";
 import checkOwner from "../../securityUtils/checkOwner";
+import { getSecurityReducer } from "../../selectors";
 
 class ComputerBuild extends Component {
   onDelete = buildIdentifier => {
@@ -40,9 +41,7 @@ class ComputerBuild extends Component {
             <div className="col-sm-4">
               <ul className="list-group">
                 <Link
-                  to={`${Constants.COMPUTER_BUILD_URL}${
-                    computerBuild.buildIdentifier
-                  }`}
+                  to={`${Constants.COMPUTER_BUILD_URL}${computerBuild.buildIdentifier}`}
                 >
                   <li className="list-group-item computer-build">
                     <i className="fa fa-flag-checkered pr-1">
@@ -67,7 +66,7 @@ ComputerBuild.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  security: state.security
+  security: getSecurityReducer(state)
 });
 
 export default connect(

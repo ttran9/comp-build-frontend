@@ -3,6 +3,7 @@ import { confirmRegistration } from "../../actions/securityActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as Constants from "../../Constants";
+import { getSecurityReducer } from "../../selectors";
 
 class VerifyRegistrationToken extends Component {
   componentDidMount() {
@@ -46,7 +47,7 @@ class VerifyRegistrationToken extends Component {
 }
 
 const mapStateToProps = state => ({
-  security: state.security
+  security: getSecurityReducer(state)
 });
 
 VerifyRegistrationToken.propTypes = {

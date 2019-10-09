@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import ComputerBuild from "../computerBuild/ComputerBuild";
 import { getComputerBuilds } from "../../actions/computerBuildActions";
 import CreateComputerBuildButton from "../computerBuild/CreateComputerBuildButton";
+import { getComputerBuildReducer, getSecurityReducer } from "../../selectors";
 class Landing extends Component {
   componentDidMount() {
     this.props.getComputerBuilds();
@@ -43,8 +44,8 @@ Landing.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  security: state.security,
-  computerBuild: state.computerBuild
+  security: getSecurityReducer(state),
+  computerBuild: getComputerBuildReducer(state)
 });
 
 export default connect(

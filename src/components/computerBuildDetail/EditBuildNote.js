@@ -8,6 +8,7 @@ import {
 } from "../../actions/computerBuildDetailActions";
 import * as Constants from "../../Constants";
 import { GET_BUILD_NOTE } from "../../actions/types";
+import {getBuildNoteReducer, getErrorsReducer} from "../../selectors";
 
 class EditBuildNote extends Component {
   constructor() {
@@ -146,8 +147,8 @@ EditBuildNote.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  errors: state.errors,
-  buildNote: state.computerBuildDetails.buildNote
+  errors: getErrorsReducer(state),
+  buildNote: getBuildNoteReducer(state)
 });
 
 export default connect(

@@ -3,6 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import * as Constants from "../Constants";
+import { getSecurityReducer } from "../selectors";
 
 const SecuredRoutes = ({ component: Component, security, ...otherProps }) => (
   <Route
@@ -22,7 +23,7 @@ SecuredRoutes.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  security: state.security
+  security: getSecurityReducer(state)
 });
 
 export default connect(mapStateToProps)(SecuredRoutes);
