@@ -14,3 +14,5 @@
 
 - Demo
   - A running demo can be seen [here](https://todd-comp-build-frontend.herokuapp.com)
+  - When visiting this, you will need to wait about 30 seconds after loading this page and then try to refresh the page because the back-end (API) is hosted as its own separation application and also needs to be started before the back-end API is called.
+    - I will have to work towards a better fix for this as I realize this definitely an inconvenience for the user.
