@@ -13,7 +13,5 @@
   - I was having trouble finding a resource to set up Express to where it could handle 404 requests but I found this [thread](https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually) to have the solution I was looking for.
 
 - Demo
-  - A running demo can be seen [here](https://todd-comp-build-frontend.herokuapp.com)
-  - When visiting this, you will need to wait about 30 seconds after loading this page and then try to refresh the page because the back-end (API) is hosted as its own separation application and also needs to be started before the back-end API is called.
-    - I will have to work towards a better fix for this as I realize this definitely an inconvenience for the user.
-      - For now if you want to load the back-end API and then the live demo above you can visit this web page [here](https://todd-comp-build-backend.herokuapp.com/api/computerbuild/). If you do this after loading the front-end portion the data will be populated.
+  - A running demo can be seen [here](https://www.compbuild.toddtran.com/)
+  - This app is currently hosted on an AWS EC2 instance.
