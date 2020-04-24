@@ -30,3 +30,7 @@ yarn-error.log*
 
 # webpack created content
 /dist
+
+# helper scripts.
+delete_output.sh
+deploy_output.sh
