@@ -1,5 +1,8 @@
+export const config = require("/etc/cb_fe_config.json");
+
 export const HOME_URL = "/";
-export const BACKEND_BASE_URL = "https://todd-comp-build-backend.herokuapp.com";
+// export const BACKEND_BASE_URL = "http://localhost:8080"; // TODO: read from configuration file (having trouble using config with production but not local environment).
+export const BACKEND_BASE_URL = "https://www.cb-be.toddtran.com"; // TODO: read from configuration file (having trouble using config with production but not local environment).
 
 // user constants
 export const REGISTER_URL = "/register";
