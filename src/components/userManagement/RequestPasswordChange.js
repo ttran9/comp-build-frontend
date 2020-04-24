@@ -23,13 +23,13 @@ class RequestPasswordChange extends Component {
     }
   }
 
-  onChange = event => {
+  onChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     });
   };
 
-  onSubmit = event => {
+  onSubmit = (event) => {
     event.preventDefault();
 
     const { username } = this.state;
@@ -59,7 +59,7 @@ class RequestPasswordChange extends Component {
                     className={classnames("form-control form-control-lg", {
                       "is-invalid": errors.username
                     })}
-                    placeholder="Email Address (Username)"
+                    placeholder="Email Address"
                     name="username"
                     value={this.state.username}
                     onChange={this.onChange}
@@ -84,7 +84,7 @@ RequestPasswordChange.propTypes = {
   security: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   errors: getErrorsReducer(state),
   security: getSecurityReducer(state)
 });
