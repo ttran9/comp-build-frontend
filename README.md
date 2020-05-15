@@ -1,5 +1,11 @@
 # Comp-Build-FrontEnd
 
+- Demo
+
+  - A running demo can be seen [here](https://www.compbuild.toddtran.com/)
+  - Currently this is running on a Linode Ubuntu VM.
+    - This was previously hosted on an AWS EC2 instance.
+
 - This will house the code for the frontend.
 
   - I have decided to split the app up into individual repositories as this would be more practical instead of using webpack to compress the front end and running it from a deployed Java back-end.
@@ -11,8 +17,3 @@
   - I was having trouble with webpack-dev-server not being detected so I just used this command "heroku config:set NPM_CONFIG_PRODUCTION=false" to ensure devDependencies are installed.
     - I also decided to just use the following command "heroku buildpacks:set heroku/nodejs" before deploying the application to Heroku.
   - I was having trouble finding a resource to set up Express to where it could handle 404 requests but I found this [thread](https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually) to have the solution I was looking for.
-
-- Demo
-  - A running demo can be seen [here](https://www.compbuild.toddtran.com/)
-  - Currently this is running on a Linode Ubuntu VM.
-    - This was previously hosted on an AWS EC2 instance.
