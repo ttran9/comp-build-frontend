@@ -14,4 +14,5 @@
 
 - Demo
   - A running demo can be seen [here](https://www.compbuild.toddtran.com/)
-  - This app is currently hosted on an AWS EC2 instance.
+  - Currently this is running on a Linode Ubuntu VM.
+    - This was previously hosted on an AWS EC2 instance.
