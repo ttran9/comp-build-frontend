@@ -8,7 +8,7 @@ import checkOwner from "../../securityUtils/checkOwner";
 import { getSecurityReducer } from "../../selectors";
 
 class ComputerBuild extends Component {
-  onDelete = buildIdentifier => {
+  onDelete = (buildIdentifier) => {
     this.props.deleteComputerBuildByIdentifier(buildIdentifier);
   };
 
@@ -62,14 +62,13 @@ class ComputerBuild extends Component {
 
 ComputerBuild.propTypes = {
   deleteComputerBuildByIdentifier: PropTypes.func.isRequired,
-  security: PropTypes.object.isRequired
+  security: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
-  security: getSecurityReducer(state)
+const mapStateToProps = (state) => ({
+  security: getSecurityReducer(state),
 });
 
-export default connect(
-  mapStateToProps,
-  { deleteComputerBuildByIdentifier }
-)(ComputerBuild);
+export default connect(mapStateToProps, { deleteComputerBuildByIdentifier })(
+  ComputerBuild
+);

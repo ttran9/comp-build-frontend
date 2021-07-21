@@ -34,3 +34,4 @@ yarn-error.log*
 # helper scripts.
 delete_output.sh
 deploy_output.sh
+deploy_local.sh

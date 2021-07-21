@@ -6,7 +6,7 @@ import { deleteComputerBuildByBuildIdentifier } from "../../actions/computerBuil
 import { getSecurityReducer } from "../../selectors";
 
 class ComputerBuildHeader extends Component {
-  onDelete = buildIdentifier => {
+  onDelete = (buildIdentifier) => {
     this.props.deleteComputerBuildByBuildIdentifier(buildIdentifier);
   };
 
@@ -53,14 +53,13 @@ class ComputerBuildHeader extends Component {
 
 ComputerBuildHeader.propTypes = {
   security: PropTypes.object.isRequired,
-  deleteComputerBuildByBuildIdentifier: PropTypes.func.isRequired
+  deleteComputerBuildByBuildIdentifier: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  security: getSecurityReducer(state)
+const mapStateToProps = (state) => ({
+  security: getSecurityReducer(state),
 });
 
-export default connect(
-  mapStateToProps,
-  { deleteComputerBuildByBuildIdentifier }
-)(ComputerBuildHeader);
+export default connect(mapStateToProps, {
+  deleteComputerBuildByBuildIdentifier,
+})(ComputerBuildHeader);
