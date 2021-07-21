@@ -5,6 +5,7 @@
   - A running demo can be seen [here](https://www.compbuild.toddtran.com/)
   - Currently this is running on a Linode Ubuntu VM.
     - This was previously hosted on an AWS EC2 instance.
+  - Backend repository [here](https://github.com/ttran9/comp-build-backend)
 
 - This will house the code for the frontend.
 
