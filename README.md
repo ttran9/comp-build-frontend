@@ -14,7 +14,15 @@
 
 - Some issues I ran into while trying to deploy:
 
-  - So I was getting an error with my module not being able to be loaded I referred to this thread [here](https://github.com/mars/create-react-app-buildpack/issues/71) and I just realized the directories were case sensitive when being pushed to GitHub but not on my local system.
-  - I was having trouble with webpack-dev-server not being detected so I just used this command "heroku config:set NPM_CONFIG_PRODUCTION=false" to ensure devDependencies are installed.
-    - I also decided to just use the following command "heroku buildpacks:set heroku/nodejs" before deploying the application to Heroku.
+  - I was having an issue reading the proper configuration value but this was due to my building this app locally and then remotely transferring it via (scp) to a remote Ubuntu VM.
+    - My fix for this was to just use the npm run build command on the remote VM.
   - I was having trouble finding a resource to set up Express to where it could handle 404 requests but I found this [thread](https://stackoverflow.com/questions/27928372/react-router-urls-dont-work-when-refreshing-or-writing-manually) to have the solution I was looking for.
+    - My current solution is just to have "historyApiFallback: true" inside of the devServer key in the webpack configuration. One drawback is that I don't have a separate webpack config for development and production.
+
+- TODO (Updated as of July 20th, 2021):
+  - Refactor the code to use function based components.
+  - Add tests with Jest.
+  - Improve the error handling (such as looking up a computer build when one doesn't exist.)
+    - This is partially done but needs improvement.
+  - Improve error handling when the user goes to a page that doesn't exist.
+  - Separate out the webpack configuration to a production one and a dev/test one.
